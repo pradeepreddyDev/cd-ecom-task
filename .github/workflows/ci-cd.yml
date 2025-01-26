@@ -1,0 +1,38 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      
+      - name: Build Backend Docker Image
+        run: |
+          echo "Building backend Docker image..."
+          docker build -t backend:latest ./backend
+          echo "Backend Docker image built successfully!"
+
+      
+      - name: Build Frontend Docker Image
+        run: |
+          echo "Building frontend Docker image..."
+          docker build -t frontend:latest ./frontend
+          echo "Frontend Docker image built successfully!"
+
+      
+      - name: Post-Build Logs
+        run: |
+          echo "CI/CD pipeline completed successfully!"
