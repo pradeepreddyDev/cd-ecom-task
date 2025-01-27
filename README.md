@@ -9,7 +9,7 @@
     A basic CRUD application demonstrating an E-Commerce Product Catalog with Authentication and Authorization.
     <br />
     <br />
-    <a href="#">View Demo</a>
+    <a target="_blank" href="http://54.167.118.57/">View Demo</a>
   </p>
 </p>
 
